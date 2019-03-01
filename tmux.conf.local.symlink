@@ -40,16 +40,56 @@ tmux_conf_new_session_prompt=true
 # -- display -------------------------------------------------------------------
 
 # molokai color palette
-black='#000000'
-dark_gray='#131313'
-gray='#9a9a9a'
-white='#f8f8f2'
-cyan='#66d9ef'
-green='#a6e22e'
-orange='#ef5939'
-pink='#f92672'
-red='#ff0000'
-yellow='#e6db74'
+#black='#000000'
+#dark_gray='#131313'
+#gray='#9a9a9a'
+#white='#f8f8f2'
+#cyan='#66d9ef'
+#green='#a6e22e'
+#orange='#ef5939'
+#pink='#f92672'
+#red='#ff0000'
+#yellow='#e6db74'
+
+# PaperColor dark palette
+# variable  | hex     # name    | note
+# --------- | ------- # ------- | ----------
+  dark_gray='#1c1c1c' # color00 | background (main)
+        red='#af005f' # color01 | *negative* (should be red)
+      green='#5faf00' # color02 | *positive* (should be green)
+     yellow='#d7af5f' # color03 | string
+       cyan='#5fafd7' # color04 | *neutral* (2nd background)
+       gray='#808080' # color05 | comment
+     orange='#d7875f' # color06 | typically/ storage class keywords
+      white='#d0d0d0' # color07 | foreground (normal text)
+   mid_gray='#585858' # color08 | 3rd background
+light_green='#5faf5f' # color09 | typically import/try-catch keywords
+ chartreuse='#afd700' # color10 | typically type and more emphasized  keywords
+   lavender='#af87d7' # color11 | typically if/conditional/loop keywords
+       gold='#ffaf00' # color12 | accent (rarely used)
+       pink='#ff5faf' # color13 | typically number
+       aqua='#00afaf' # color14 | typically the rest of keywords
+      slate='#5f8787' # color15 | highlight
+
+# PaperColor light palette
+# variable  | hex     # name    | note
+# --------- | ------- # ------- | ----------
+# dark_gray='#DADADA' # color00 | background (main)
+#       red='#df0000' # color01 | *negative* (should be red)
+#     green='#008700' # color02 | *positive* (should be green)
+#    yellow='#d7af5f' # color03 | string
+#      cyan='#4271ae' # color04 | *neutral* (2nd background)
+#      gray='#808080' # color05 | comment
+#    orange='#d75f00' # color06 | typically storage class keywords
+#     white='#4d4d4c' # color07 | foreground (normal text)
+#  mid_gray='#efefef' # color08 | 3rd background
+#ight_green='#718c00' # color09 | typically import/try-catch keywords
+#chartreuse='#afd700' # color10 | typically type and more emphasized  keywords
+#  lavender='#8959a8' # color11 | typically if/conditional/loop keywords
+#      gold='#ffaf00' # color12 | accent (rarely used)
+#      pink='#d7005f' # color13 | typically number
+#      aqua='#3e999f' # color14 | typically the rest of keywords
+#     slate='#005f87' # color15 | highlight
 
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
@@ -67,7 +107,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg="${cyan}"
+tmux_conf_theme_focused_pane_bg="${chartreuse}"
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -75,7 +115,7 @@ tmux_conf_theme_focused_pane_bg="${cyan}"
 tmux_conf_theme_pane_border_style='thin'
 
 # pane borders colours:
-tmux_conf_theme_pane_border="${gray}"
+tmux_conf_theme_pane_border="${white}"
 tmux_conf_theme_pane_active_border="${cyan}"
 
 # pane indicator colours
@@ -84,21 +124,21 @@ tmux_conf_theme_pane_active_indicator="${cyan}"
 
 # status line style
 tmux_conf_theme_message_fg="${black}"
-tmux_conf_theme_message_bg="${green}"
+tmux_conf_theme_message_bg="${light_green}"
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg="${yellow}"
+tmux_conf_theme_message_command_fg="${cyan}"
 tmux_conf_theme_message_command_bg="${black}"
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
 tmux_conf_theme_mode_fg="${black}"
-tmux_conf_theme_mode_bg="${yellow}"
+tmux_conf_theme_mode_bg="${cyan}"
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
-tmux_conf_theme_status_fg="${gray}"
+tmux_conf_theme_status_fg="${white}"
 tmux_conf_theme_status_bg="${dark_gray}"
 tmux_conf_theme_status_attr='none'
 
@@ -120,7 +160,7 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg="${gray}"
+tmux_conf_theme_window_status_fg="${white}"
 tmux_conf_theme_window_status_bg="${dark_gray}"
 tmux_conf_theme_window_status_attr='none'
 # tmux_conf_theme_window_status_format='#I #W'
@@ -148,7 +188,7 @@ tmux_conf_theme_window_status_activity_bg='default'
 tmux_conf_theme_window_status_activity_attr='underscore'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg="${yellow}"
+tmux_conf_theme_window_status_bell_fg="${cyan}"
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
@@ -195,12 +235,12 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_stat
 
 # status left style
 tmux_conf_theme_status_left_fg="${black},${black},${white}"
-tmux_conf_theme_status_left_bg="${orange},${yellow},#{cyan}"
+tmux_conf_theme_status_left_bg="${green},${chartreuse},#{cyan}"
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg="${gray},${black},${black}"
-tmux_conf_theme_status_right_bg="${dark_gray},${gray},${white}"
+tmux_conf_theme_status_right_fg="${white},${black},${black}"
+tmux_conf_theme_status_right_bg="${dark_gray},${white},${pink}"
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -242,22 +282,22 @@ tmux_conf_battery_bar_length='auto'
 #   - gradient (default)
 #   - heat
 #   - 'colour_full_fg,colour_empty_fg,colour_bg'
-tmux_conf_battery_bar_palette='gradient'
-#tmux_conf_battery_bar_palette="${red},${white},${black}"
+#tmux_conf_battery_bar_palette='gradient'
+tmux_conf_battery_bar_palette="${red},${white},${black}"
 
 # battery hbar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - 'colour_low,colour_half,colour_full'
-tmux_conf_battery_hbar_palette='gradient'
-#tmux_conf_battery_hbar_palette="${red},${orange},${green}"
+#tmux_conf_battery_hbar_palette='gradient'
+tmux_conf_battery_hbar_palette="${red},${orange},${green}"
 
 # battery vbar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - 'colour_low,colour_half,colour_full'
-tmux_conf_battery_vbar_palette='gradient'
-#tmux_conf_battery_vbar_palette="${red},${orange},${green}"
+#tmux_conf_battery_vbar_palette='gradient'
+tmux_conf_battery_vbar_palette="${red},${orange},${green}"
 
 # symbols used to indicate whether battery is charging or discharging
 #tmux_conf_battery_status_charging='↑'       # U+2191
