@@ -40,7 +40,7 @@ tmux_conf_new_session_prompt=true
 # -- display -------------------------------------------------------------------
 
 # molokai color palette
-#black='#000000'
+black='#000000'
 #dark_gray='#131313'
 #gray='#9a9a9a'
 #white='#f8f8f2'
@@ -116,11 +116,11 @@ tmux_conf_theme_pane_border_style='thin'
 
 # pane borders colours:
 tmux_conf_theme_pane_border="${white}"
-tmux_conf_theme_pane_active_border="${cyan}"
+tmux_conf_theme_pane_active_border="${light_green}"
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator="${cyan}"
-tmux_conf_theme_pane_active_indicator="${cyan}"
+tmux_conf_theme_pane_indicator="${green}"
+tmux_conf_theme_pane_active_indicator="${light_green}"
 
 # status line style
 tmux_conf_theme_message_fg="${black}"
@@ -133,8 +133,8 @@ tmux_conf_theme_message_command_bg="${black}"
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg="${black}"
-tmux_conf_theme_mode_bg="${cyan}"
+tmux_conf_theme_mode_fg="${light_green}"
+tmux_conf_theme_mode_bg="${green}"
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
@@ -230,18 +230,18 @@ tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
+tmux_conf_theme_status_left=' ↑#{?uptime_d,#{uptime_d}d,}#{?uptime_h,#{uptime_h}h,}#{?uptime_m,#{uptime_m}m,} | ✡︎ #{circled_session_name} '
 tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_vbar, #{battery_vbar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
 
 # status left style
-tmux_conf_theme_status_left_fg="${black},${black},${white}"
-tmux_conf_theme_status_left_bg="${green},${chartreuse},#{cyan}"
-tmux_conf_theme_status_left_attr='bold,none,none'
+tmux_conf_theme_status_left_fg="${green},${pink},${cyan}"
+tmux_conf_theme_status_left_bg="${light_green},${red},${aqua}"
+tmux_conf_theme_status_left_attr='none,bold,none'
 
 # status right style
-tmux_conf_theme_status_right_fg="${white},${black},${black}"
-tmux_conf_theme_status_right_bg="${dark_gray},${white},${pink}"
-tmux_conf_theme_status_right_attr='none,none,bold'
+tmux_conf_theme_status_right_fg="${white},${dark_gray},${dark_gray}"
+tmux_conf_theme_status_right_bg="${dark_gray},${gold},${gray}"
+tmux_conf_theme_status_right_attr='none,bold,bold'
 
 # pairing indicator
 tmux_conf_theme_pairing='👓 '          # U+1F453
